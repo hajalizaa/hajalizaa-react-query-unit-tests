@@ -6,12 +6,11 @@ import Product from '../product';
 
 jest.mock('next/router', () => require('next-router-mock'));
 
-// navigate to localhost:3000/products/[id]
-// simulating we are navigated to products/1
-
-describe('supervisor form', () => {
+describe('Product detail tests', () => {
   const product = productsMock[0];
-  mockRouter.push(`/products/2`);
+  // navigate to localhost:3000/products/[id]
+  // simulating we are navigated to products/1
+  mockRouter.push(`/products/${product.id}`);
 
   it('should render product title in detail page', () => {
     const rendered = render({

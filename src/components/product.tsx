@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useGetProduct } from 'hook/api';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 
 import styles from './products.module.css';

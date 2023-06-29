@@ -3,7 +3,7 @@ import Products from '../products';
 import { render } from 'utils/testing/render';
 import { PRODUCTS } from 'constants/queryKeys';
 
-describe('supervisor form', () => {
+describe('Products tests', () => {
   it('should show all mocked products', () => {
     const rendered = render({
       component: <Products />,
