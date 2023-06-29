@@ -299,7 +299,7 @@ The second test, titled `'should show first product title'`, ensures that the co
 
 The third test, titled `'should add product title to product card title'`, validates that the `title` attribute of the first element with the `data-testid` of `'card'` matches the `title` of the first product from `productsMock`. Again, the test utilizes the render function with mock data to render the component.
 
-## These tests verify the expected behavior of the `Products` component by checking if the rendered output matches the provided mock data.
+These tests verify the expected behavior of the `Products` component by checking if the rendered output matches the provided mock data.
 
 **Unit Tests for `Product` Component:**
 
@@ -363,3 +363,7 @@ The tests included in this file are:
 To simulate navigation to the product detail page, the `mockRouter` object is used from the `next-router-mock` library. The push method is invoked to navigate to a specific `URL` path, simulating the behavior of navigating to `localhost:3000/products/[id]`. In this case, it simulates navigating to the `products/1` URL.
 
 These unit tests verify that the `Product` component correctly renders the `title` and `price` of a specific product on the detail page. They help ensure that the component behaves as expected and displays the relevant information accurately.
+
+## Authors
+
+- [@hajalizaa](https://www.github.com/hajalizaa)
