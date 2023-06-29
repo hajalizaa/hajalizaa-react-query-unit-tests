@@ -1,17 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from '@tanstack/react-query';
 
-import { IError } from "config/axios";
-import { PRODUCTS } from "constants/queryKeys";
-import { getProduct, getProducts } from "services";
+import { IError } from 'config/axios';
+import { PRODUCT, PRODUCTS } from 'constants/queryKeys';
+import { getProduct, getProducts } from 'services';
 import {
   IGetProductArgs,
   IGetProductsArgs,
-  IProduct,
-} from "types/api/products";
+  IProduct
+} from 'types/api/products';
 
 export const useGetProducts = ({
   limit,
-  options,
+  options
 }: IGetProductsArgs<IProduct[], IError>) => {
   return useQuery<IProduct[], IError>(
     [PRODUCTS],
@@ -22,10 +22,10 @@ export const useGetProducts = ({
 
 export const useGetProduct = ({
   id,
-  options,
+  options
 }: IGetProductArgs<IProduct, IError>) => {
   return useQuery<IProduct, IError>(
-    [PRODUCTS],
+    [PRODUCT],
     () => getProduct({ id }),
     options
   );

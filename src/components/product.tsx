@@ -1,37 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import { useGetProduct } from 'hook/api';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import styles from './products.module.css';
-
 const Product = () => {
   const { query } = useRouter();
 
-  const {
-    data: product,
-    isLoading,
-    isFetching
-  } = useGetProduct({
-    id: parseInt((query.product as string) || '0'),
+  const { data: product } = useGetProduct({
+    id: Number(query.id as string),
     options: {
-      enabled: query.product !== undefined
+      enabled: query.id !== undefined
     }
   });
 
-  if (isLoading || isFetching) {
-    return <>loading...</>;
-  }
-
   return (
-    <div>
-      <div className={styles.card}>
-        <img src={product?.image} alt={product?.title} />
-        <p>
-          {product?.title} - {product?.price}$
-        </p>
-        <p>{product?.description}</p>
-      </div>
+    <div className={styles.card} data-testid="card">
+      <img src={product?.image} alt={product?.title} />
+      <p data-testid="productTitle">
+        {product?.title} -{' '}
+        <span data-testid="productPrice">{product?.price}$</span>
+      </p>
+      <p>{product?.description}</p>
     </div>
   );
 };

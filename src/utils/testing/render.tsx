@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import { render as tRender } from '@testing-library/react';
+
 import { withRQ } from './withRQ';
 
 export interface IRender {
-  component: ReactNode;
+  component: any;
   reactQueryData?: {
     queryKey: string[];
     data: any;
@@ -10,5 +11,5 @@ export interface IRender {
 }
 
 export const render = ({ component, reactQueryData = [] }: IRender) => {
-  return withRQ(component, reactQueryData);
+  return tRender(withRQ(component, reactQueryData));
 };
